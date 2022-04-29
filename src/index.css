@@ -14,3 +14,10 @@ h1, h2,h3,h4 {
   line-height: 1.4;
   color: #222222;
 }
+
+.text-color-primary {
+  color:#0c96d1 ;
+}
+.bg-color-primary {
+  color:#0c96d1 ;
+}
