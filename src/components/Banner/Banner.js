@@ -3,7 +3,7 @@ import inventoryImage from '../../images/inventory-banner-image.png';
 
 const Banner = () => {
     return (
-        <section className='container md:grid grid-cols-2 mx-auto'>
+        <section className='container md:grid grid-cols-2 mx-auto py-10'>
             <div className='flex justify-center'>
                 <img className='img-fluid' src={inventoryImage} alt="InventoryImage" />
             </div>
@@ -11,7 +11,7 @@ const Banner = () => {
                 <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, corporis!</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, modi. Cum illum quis quasi distinctio asperiores. Quam repudiandae aliquam facere dolorem, architecto, libero perferendis quo dignissimos a corrupti, ipsam magni!</p>
                 <div>
-                    <a href="#" className='bg-color-primary hover:bg-gray-800 px-10 py-3 mt-3 text-white rounded inline-block'>Details about </a>
+                    <a href="#" className='bg-color-primary hover:bg-gray-800 px-10 py-3 mt-3 text-white rounded inline-block font-bold'>Details about </a>
 
                 </div>
             </div>
