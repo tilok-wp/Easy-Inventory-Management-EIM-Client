@@ -2,6 +2,7 @@ import React from 'react';
 import useProductItems from '../../hooks/useProductItems';
 import Banner from '../Banner/Banner'
 import ProductItem from '../ProductItem/ProductItem';
+import TopSupplier from '../TopSupplier/TopSupplier';
 
 
 const Home = () => {
@@ -21,6 +22,7 @@ const Home = () => {
 
                 </div>
             </div>
+            <TopSupplier></TopSupplier>
         </div>
     );
 };
