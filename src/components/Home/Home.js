@@ -1,7 +1,9 @@
 import React from 'react';
 import useProductItems from '../../hooks/useProductItems';
 import Banner from '../Banner/Banner'
+import Features from '../Features/Features';
 import ProductItem from '../ProductItem/ProductItem';
+import Support from '../Support/Support';
 import TopSupplier from '../TopSupplier/TopSupplier';
 
 
@@ -23,6 +25,8 @@ const Home = () => {
                 </div>
             </div>
             <TopSupplier></TopSupplier>
+            <Features></Features>
+            <Support></Support>
         </div>
     );
 };
