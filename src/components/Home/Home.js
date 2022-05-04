@@ -2,7 +2,8 @@ import React from 'react';
 import useProductItems from '../../hooks/useProductItems';
 import Banner from '../Banner/Banner'
 import Features from '../Features/Features';
-import ProductItem from '../ProductItem/ProductItem';
+import PageTitleBar from '../PageTitleBar/PageTitleBar';
+import Product from '../Product/Product';
 import Support from '../Support/Support';
 import TopSupplier from '../TopSupplier/TopSupplier';
 
@@ -12,14 +13,14 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <div className='py-10 container mx-auto'>
+            <div className='py-10 container mx-auto px-3 md:px-0'>
                 <h3 className='text-center text-3xl uppercase mb-5'>Stock Products {productItems.length}</h3>
-                <div className='grid grid-cols-3'>
+                <div className='grid gap-5 md:grid-cols-2 lg:grid-cols-3'>
                     {
-                        productItems.map(item => <ProductItem
-                            key={item._id}
-                            item={item}
-                        ></ProductItem>)
+                        productItems.map(productDetails => <Product
+                            key={productDetails._id}
+                            productDetails={productDetails}
+                        ></Product>)
                     }
 
                 </div>
@@ -27,6 +28,7 @@ const Home = () => {
             <TopSupplier></TopSupplier>
             <Features></Features>
             <Support></Support>
+            <PageTitleBar title='Home'></PageTitleBar>
         </div>
     );
 };
