@@ -1,20 +1,51 @@
-import React from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import React, { useEffect, useRef } from 'react';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import Loader from '../Loader/Loader';
 import LoingWithSocial from '../LoingWithSocial/LoingWithSocial';
 
 const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
+    const refResetEmail = useRef('')
 
     const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     const { register, handleSubmit } = useForm();
-    const onSubmitLogin = async data => {
-        await signInWithEmailAndPassword(data.email, data.password)
+    const onSubmitLogin = async (data) => {
+        const email = data.email
+        const password = data.password
+        await signInWithEmailAndPassword(email, password)
     };
+
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true });
+        }
+
+    }, [user])
+    const passResetHandaller = async () => {
+        const email = refResetEmail.current.value
+        if (email) {
+            sendPasswordResetEmail(email)
+            toast('Rest email send. Please check your inbox.');
+        } else {
+            toast('Please enter your register email.');
+        }
+    }
+    if (loading || sending) {
+        return <Loader></Loader>
+    }
+    let errorMessage
+    if (error) {
+        errorMessage = <p className='text-red-700 py-3'>{error?.message}</p>
+    }
+
 
 
     return (
@@ -22,13 +53,14 @@ const Login = () => {
             <h3 className="my-5 text-center text-3xl uppercase">Login Please</h3>
             <div className='md:w-1/3 mx-auto'>
                 <form onSubmit={handleSubmit(onSubmitLogin)}>
-                    <input className='shadow p-5 w-full mb-5 rounded-lg' placeholder='Email' type="email" {...register("email", { required: true })} />
+                    <input className='shadow p-5 w-full mb-5 rounded-lg' ref={refResetEmail} placeholder='Email' type="email" {...register("email", { required: true })} />
                     <input className='shadow p-5 w-full mb-5 rounded-lg' placeholder='Password' type='password' {...register("password", { required: true })} />
                     <input type="submit" value="Login" className='cursor-pointer bg-color-primary hover:bg-gray-800 font-semibold px-12 py-3 mt-3 mx-auto text-white  rounded block' />
 
                 </form>
+                {errorMessage}
                 <p className='text-xl mt-10 mb-3'>Are you new user? <Link className='font-bold' to='/register'> Register </Link> </p>
-                <p className='text-xl my-3'>Forgot your password? <button className='font-bold' > Reset password</button> </p>
+                <p className='text-xl my-3'>Forgot your password? <button onClick={passResetHandaller} className='font-bold' > Reset password</button> </p>
                 <LoingWithSocial></LoingWithSocial>
 
             </div>

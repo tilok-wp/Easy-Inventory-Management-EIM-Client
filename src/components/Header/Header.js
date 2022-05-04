@@ -25,7 +25,7 @@ const Header = () => {
                 </nav>
                 <div className='fixed top-3 right-0 flex items-center md:static z-50'>
                     {
-                        user ? <> <button onClick={signOutHandle} className='bg-color-primary font-semibold hover:bg-gray-800 px-5 py-1.5 ml-3 text-white rounded-full'>Sign out </button><img className='w-10 h-10 border-2 rounded-full' src={user?.photoURL} alt="" /></> : <Link to='/login'><button className='bg-color-primary font-semibold hover:bg-gray-800 px-5 py-1.5 ml-3 text-white rounded-full'>Login</button></Link>
+                        user ? <> <button onClick={signOutHandle} className='bg-color-primary font-semibold hover:bg-gray-800 px-5 py-1.5 ml-3 text-white rounded-full'>Sign out </button><img className='w-10 h-10 border-2 border-cyan-400 rounded-full ml-1 ' src={user?.photoURL} alt="" /></> : <Link to='/login'><button className='bg-color-primary font-semibold hover:bg-gray-800 px-5 py-1.5 ml-3 text-white rounded-full'>Login</button></Link>
                     }
                     <div onClick={() => setToogle(!toogle)} className='w-8 h-8 md:hidden ml-5 mr-5'>
                         {toogle ? <XIcon /> : <MenuAlt2Icon />}
