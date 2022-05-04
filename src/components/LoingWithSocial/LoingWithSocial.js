@@ -5,8 +5,11 @@ import auth from '../../firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth'
 
 const LoingWithSocial = () => {
+
     const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
     console.log(userGoogle)
+
+
     return (
         <div>
             <div className='flex items-center py-5'>

@@ -10,6 +10,7 @@ import ManageItems from './components/ManageItems/ManageItems';
 import AddItem from './components/AddItem/AddItem';
 import MyItems from './components/MyItems/MyItems';
 import Blogs from './components/Blogs/Blogs';
+import InventoryItem from './components/InventoryItem/InventoryItem';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path='/manage-items' element={<ManageItems></ManageItems>}></Route>
         <Route path='/add-item' element={<AddItem></AddItem>}></Route>
         <Route path='/my-items' element={<MyItems></MyItems>}></Route>
+        <Route path='/inventory/:id' element={<InventoryItem></InventoryItem>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
