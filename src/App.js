@@ -13,6 +13,7 @@ import Blogs from './components/Blogs/Blogs';
 import InventoryItem from './components/InventoryItem/InventoryItem';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AddBlogItem from './components/AddBlogItem/AddBlogItem';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path='/my-items' element={<MyItems></MyItems>}></Route>
         <Route path='/inventory/:id' element={<InventoryItem></InventoryItem>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/add-blog' element={<AddBlogItem></AddBlogItem>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='*' element={<NotfoundPage></NotfoundPage>}></Route>

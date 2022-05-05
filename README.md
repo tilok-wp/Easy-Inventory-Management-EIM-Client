@@ -8,7 +8,7 @@ EIM Easy Inventory Management is a simple app. Here you can easily manage your p
 
 ## Frontend/ Client side source code: [https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-tilok-wp](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-tilok-wp/)
 
-## Backen / Server side source Code:[https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-tilok-wp.git](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-tilok-wp.git/)
+## Backend / Server side source Code:[https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-tilok-wp.git](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-tilok-wp.git/)
 
 ## Application Features:
 
@@ -21,13 +21,14 @@ EIM Easy Inventory Management is a simple app. Here you can easily manage your p
 - Stock quantity update
 - Stock delivered option
 
-## List of frameworks and libraries use in this App
+## List of frameworks and libraries use in this App For front-end client side
 
 - React
 - CSS framework tailwind
 - React Router v6
 - Custom hooks
 - Firebase for authorization
+- Firebase Hosting for client side deploy
 - React toastify
 - React firebase hooks
 - React-helmet-async

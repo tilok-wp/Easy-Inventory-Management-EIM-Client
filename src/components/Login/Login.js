@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loader from '../Loader/Loader';
 import LoingWithSocial from '../LoingWithSocial/LoingWithSocial';
+import PageTitleBar from '../PageTitleBar/PageTitleBar';
 
 const Login = () => {
     const navigate = useNavigate()
@@ -64,7 +65,7 @@ const Login = () => {
                 <LoingWithSocial></LoingWithSocial>
 
             </div>
-
+            <PageTitleBar title='Login'></PageTitleBar>
         </div>
     );
 };
