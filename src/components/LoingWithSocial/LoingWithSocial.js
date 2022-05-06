@@ -10,8 +10,8 @@ const LoingWithSocial = () => {
     const navigate = useNavigate()
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
-    const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
-    const [signInWithFacebook, userFacebook, loadingFacebook, errorFacebook] = useSignInWithFacebook(auth);
+    const [signInWithGoogle, userGoogle, loadingGoogle] = useSignInWithGoogle(auth);
+    const [signInWithFacebook, userFacebook, loadingFacebook] = useSignInWithFacebook(auth);
 
     useEffect(() => {
         if (userGoogle || userFacebook) {

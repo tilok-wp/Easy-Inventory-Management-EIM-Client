@@ -18,10 +18,11 @@ const Header = () => {
                 <Link to='/'> Logo </Link>
                 <nav className={`flex flex-col md:flex-row absolute text-center md:static w-full md:w-fit bg-gray-50 md:bg-transparent duration-500 ease-in z-0 ${toogle ? 'top-[45px]' : 'top-[-300px]'}`}>
                     <ActiveLink to='/'>Home</ActiveLink>
+                    <ActiveLink to='/about'>About</ActiveLink>
+                    <ActiveLink to='/blogs'>Blogs</ActiveLink>
                     <ActiveLink to='/manage-items'>Manage Items</ActiveLink>
                     <ActiveLink to='/add-item'>Add Item</ActiveLink>
                     <ActiveLink to='/my-items'>My items</ActiveLink>
-                    <ActiveLink to='/blogs'>Blogs</ActiveLink>
                 </nav>
                 <div className='fixed top-3 right-0 flex items-center md:static z-50'>
                     {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const useProductDetails = product_id => {
-    const [productItem, setProductItem] = useState()
+    const [productItem, setProductItem] = useState([])
 
     useEffect(() => {
         const url = `http://localhost:5000/inventory/${product_id}`

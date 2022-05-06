@@ -9,7 +9,7 @@ const AddBlogItem = () => {
 
     const onSubmitBlog = async (data) => {
         const imageUrl = data.imageUrl
-        const password = data.password
+        const blogHeading = data.blogHeading
         const blogDescription = data.blogDescription
         console.log(data)
         // navigate('/blogs')
