@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useProductItems from '../../hooks/useProductItems';
 import Product from '../Product/Product';
 
@@ -23,6 +23,10 @@ const ProductSection = () => {
                             handleManageProduct={handleManageProduct}
                         ></Product>)
                     }
+
+                </div>
+                <div className='text-center mt-10'>
+                    <Link className='bg-color-primary hover:bg-gray-800 px-10 py-3 mt-3 text-white rounded-full inline-block font-bold' to='/add-item'> Add New Product </Link>
 
                 </div>
             </div>

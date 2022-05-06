@@ -14,7 +14,7 @@ const Header = () => {
     const [toogle, setToogle] = useState(false)
     return (
         <header className='py-5 bg-white sticky top-0 z-10 shadow-lg shadow-slate-100'>
-            <div className='container mx-auto lg:flex justify-between items-center relative px-5'>
+            <div className='container md:mx-auto lg:flex justify-between items-center relative'>
                 <Link to='/'> Logo </Link>
                 <nav className={`flex flex-col md:flex-row absolute text-center md:static w-full md:w-fit bg-gray-50 md:bg-transparent duration-500 ease-in z-0 ${toogle ? 'top-[45px]' : 'top-[-300px]'}`}>
                     <ActiveLink to='/'>Home</ActiveLink>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import useProductItems from '../../hooks/useProductItems';
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
-
+import TableItem from '../TableItem/TableItem';
+import './ManageItems.css'
 const ManageItems = () => {
     const [stockCount, setStockCount] = useState(0)
     const [productItems, setProductItems] = useProductItems([stockCount])
@@ -37,18 +38,32 @@ const ManageItems = () => {
         <section className='py-20'>
             <h3 className='text-center text-3xl uppercase mb-10'>Manage Inventories : {stockCount}</h3>
             <div className='container mx-auto py-5'>
-                <ol>
+                <table className='manage-product'>
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Product name</th>
+                            <th>Price</th>
+                            <th>Available Quantity</th>
+                            <th>Total Delivered</th>
+                            <th>Supplier</th>
+                            <th>Description</th>
+                            <th>Delete</th>
+                            <th>Update</th>
 
-                    {
-                        productItems.map(item => <li
-                            key={item._id}
-
-                        > {item.productName} || <button onClick={() => handleDeleteStockItem(item._id)}>X</button> || <button>Manage</button> </li>)
-                    }
-
-                </ol>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            productItems.map(item => <TableItem
+                                key={item._id}
+                                item={item}
+                                handleDeleteStockItem={handleDeleteStockItem}
+                            ></TableItem>)}
+                    </tbody>
+                </table>
             </div>
-            <PageTitleBar title='Home'></PageTitleBar>
+            <PageTitleBar title='Manage Items'></PageTitleBar>
         </section>
     );
 };

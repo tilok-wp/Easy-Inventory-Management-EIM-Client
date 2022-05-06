@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { toast } from 'react-toastify';
+import PageTitleBar from '../PageTitleBar/PageTitleBar';
 const axios = require('axios')
 
 const AddItem = () => {
@@ -39,9 +40,9 @@ const AddItem = () => {
 
     };
     return (
-        <div className='py-20 container mx-auto'>
+        <div className='py-20 container md:mx-auto px-3 md:px-0'>
             <h3 className='text-center text-3xl mb-5'>Add Stock Item</h3>
-            <form onSubmit={handleSubmit(handleAddItem)} className='w-1/2 mx-auto'>
+            <form onSubmit={handleSubmit(handleAddItem)} className='mw-1/2 mx-auto'>
                 <input className='shadow w-full p-3 mb-2 rounded-lg border border-blue-100' placeholder='Product name' type="text" {...register("productName", { required: true })} />
                 <div className='grid gap-2 md:grid-cols-3'>
                     <input className='shadow p-3 mb-2 rounded-lg border border-blue-100' placeholder='Price' type="number" {...register("price", { min: 0, required: true })} />
@@ -58,6 +59,7 @@ const AddItem = () => {
                 <input type="submit" value="Submit" className='cursor-pointer bg-color-primary hover:bg-gray-800 font-semibold px-12 py-3 mt-3 mx-auto text-white  rounded block' />
 
             </form>
+            <PageTitleBar title='Add Product'></PageTitleBar>
         </div>
     );
 };

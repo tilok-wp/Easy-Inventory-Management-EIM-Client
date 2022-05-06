@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <footer className='bg-gray-200 py-5'>
-            <div className='container mx-auto md:flex md:justify-between text-center'>
+            <div className='container md:mx-auto md:flex md:justify-between text-center'>
                 <div>
                     <a href="#" target="_blank" >Facebook</a>
                     <a className='mx-5' href="#" target="_blank" >Youtube</a>
