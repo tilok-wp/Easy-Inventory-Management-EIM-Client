@@ -20,9 +20,14 @@ const Header = () => {
                     <ActiveLink to='/'>Home</ActiveLink>
                     <ActiveLink to='/about'>About</ActiveLink>
                     <ActiveLink to='/blogs'>Blogs</ActiveLink>
-                    <ActiveLink to='/manage-items'>Manage Items</ActiveLink>
-                    <ActiveLink to='/add-item'>Add Item</ActiveLink>
-                    <ActiveLink to='/my-items'>My items</ActiveLink>
+                    {user ? <>
+                        <ActiveLink to='/manage-items'>Manage Items</ActiveLink>
+                        <ActiveLink to='/add-item'>Add Item</ActiveLink>
+                        <ActiveLink to='/my-items'>My items</ActiveLink>
+                    </> : ''
+
+                    }
+
                 </nav>
                 <div className='fixed top-3 right-0 flex items-center md:static z-50'>
                     {

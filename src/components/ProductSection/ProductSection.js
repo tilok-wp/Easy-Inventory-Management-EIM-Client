@@ -4,7 +4,7 @@ import useProductItems from '../../hooks/useProductItems';
 import Product from '../Product/Product';
 
 const ProductSection = () => {
-    const [productItems] = useProductItems()
+    const [productItems] = useProductItems([6])
     const navigate = useNavigate()
 
     const handleManageProduct = id => {

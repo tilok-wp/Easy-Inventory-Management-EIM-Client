@@ -24,8 +24,12 @@ const Register = () => {
         createUserWithEmailAndPassword(email, password)
         await createUserWithEmailAndPassword(email, password)
         await updateProfile({ displayName })
+        // navigate(from, { replace: true })
+    }
+    if (user) {
         navigate(from, { replace: true })
     }
+
     if (loading || updating) {
         return <Loader></Loader>
     }

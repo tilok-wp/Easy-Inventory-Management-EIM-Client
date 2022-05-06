@@ -13,7 +13,7 @@ const InventoryItem = () => {
     const { _id, price, productName, quantity, supplier, description, picture } = productItem
     // console.log(productItem)
     const onSubmitReStock = async (data) => {
-
+        console.log(data)
     }
 
     return (

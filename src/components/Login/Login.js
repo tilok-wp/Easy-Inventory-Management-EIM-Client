@@ -34,17 +34,25 @@ const Login = () => {
         const email = refResetEmail.current.value
         if (email) {
             sendPasswordResetEmail(email)
-            toast('Rest email send. Please check your inbox.');
+            toast.success('Rest email send. Please check your inbox.');
         } else {
-            toast('Please enter your register email.');
+            toast.info('Please enter your register email.');
         }
     }
     if (loading || sending) {
         return <Loader></Loader>
     }
-    let errorMessage
+    let errorMessage = ''
     if (error) {
-        errorMessage = <p className='text-red-700 py-3'>{error?.message}</p>
+        const passwordErr = error?.message.includes('wrong-password')
+        console.log(passwordErr)
+        if (passwordErr) {
+            errorMessage = 'Email and Password not matched. Please try with Write info'
+        } else {
+            errorMessage = error?.message
+        }
+        errorMessage = <p className='text-red-700 py-3 text-xl'>{errorMessage}</p>
+
     }
 
 

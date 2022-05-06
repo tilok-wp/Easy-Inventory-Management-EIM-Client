@@ -21,7 +21,7 @@ const Features = () => {
                     </div>
                     <div className='border border-slate-100 bg-white rounded-2xl py-10 flex flex-col justify-center items-center'>
                         <RefreshIcon className="h-14 w-14 text-color-primary hover:text-gray-800" />
-                        <h3 className='lg:text-xl'>Product update</h3>
+                        <h3 className='lg:text-xl'>Stock update</h3>
                     </div>
                     <div className='border border-slate-100 bg-white rounded-2xl py-10 flex flex-col justify-center items-center'>
                         <TruckIcon className="h-14 w-14 text-color-primary hover:text-gray-800" />
