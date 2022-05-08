@@ -57,9 +57,9 @@ const InventoryItem = () => {
     }
 
     return (
-        <section className='py-20 container mx-auto'>
-            <div className=' flex'>
-                <div className=''>
+        <section className='py-20 container md:w-1/2 mx-auto bg-slate-50 px-5'>
+            <div className='grid gap-5 md:grid-cols-2 place-items-center'>
+                <div className='flex justify-center items-center '>
                     <img src={picture} alt="" />
                 </div>
                 <div className='p-5 grow-0'>
