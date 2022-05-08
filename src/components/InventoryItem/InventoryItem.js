@@ -59,16 +59,16 @@ const InventoryItem = () => {
     return (
         <section className='py-20 container md:w-1/2 mx-auto bg-slate-50 px-5'>
             <div className='grid gap-5 md:grid-cols-2 place-items-center'>
-                <div className='flex justify-center items-center '>
-                    <img src={picture} alt="" />
+                <div className='flex justify-center items-center w-full '>
+                    <img className='w-full p-8' src={picture} alt="" />
                 </div>
                 <div className='p-5 grow-0'>
-                    <h3>{productName}</h3>
-                    <span>Supplier: {supplier}</span>
-                    <div><span>Price: <strong>{price}</strong></span> <span>Stock Quantity: <strong>{quantity}</strong></span> {delivered ? <><span>Delivered: {delivered} </span></> : ''} </div>
+                    <h3 className='text-2xl mb-3'>{productName}</h3>
+                    <span >Supplier: <strong>{supplier}</strong></span>
+                    <div className='mt-3'><span>Price: <strong>{price}</strong></span> <span className='ml-5'>Stock Quantity: <strong>{quantity}</strong></span> {delivered ? <><span>Delivered: {delivered} </span></> : ''} </div>
                     <button onClick={() => handleDeliveredItem(_id)} className='mt-5 bg-color-primary hover:bg-gray-800 font-semibold px-8 py-3 text-white  rounded'>Delivered</button>
 
-                    <h3 className='mt-5 mb-3 '>Restock Item</h3>
+                    <h3 className='mt-5 mb-3 text-xl'>Restock Item</h3>
                     <form onSubmit={handleSubmit(onSubmitReStock)}>
                         <input className='shadow p-3 mr-2 mb-3 rounded-lg border border-blue-100' placeholder='Re-Stock Quantity' type="number" {...register("quantity", { min: 1, required: true })} />
 

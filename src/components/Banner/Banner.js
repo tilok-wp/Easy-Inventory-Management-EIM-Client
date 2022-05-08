@@ -9,8 +9,8 @@ const Banner = () => {
                 <img className='img-fluid' src={inventoryImage} alt="InventoryImage" />
             </div>
             <div className='flex flex-col justify-center px-5 '>
-                <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, corporis!</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo, modi. Cum illum quis quasi distinctio asperiores. Quam repudiandae aliquam facere dolorem, architecto, libero perferendis quo dignissimos a corrupti, ipsam magni!</p>
+                <h2 className='text-2xl md:text-5xl font-normal leading-loose mb-5'>Welcome come to <strong>EIM </strong> a popular and premium dates<br /> Inventory manager </h2>
+                <p className='mb-3 leading-relaxed'>Easy Inventory management (EIM ) is popular <strong>premium Dates</strong> stock house. Hare easily manage stock collection and updates its stock and delivered information.</p>
                 <div>
                     <Link to='/manage-items' className='bg-color-primary hover:bg-gray-800 px-10 py-3 mt-3 text-white rounded-full inline-block font-bold'> Manage Stock Items </Link>
 

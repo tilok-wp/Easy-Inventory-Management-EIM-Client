@@ -51,9 +51,11 @@ const AddItem = () => {
                     <input className="shadow p-3 mb-2 ml-1 rounded-lg border border-blue-100" placeholder='Quantity' type="number" {...register("quantity", { min: 0, required: true })} />
                     <select className='shadow p-3 mb-2 rounded-lg border border-blue-100' {...register("supplier")}>
                         <option value=" ">Choose supplier</option>
-                        <option value="supplier-1">supplier -1</option>
-                        <option value="supplier-2">supplier -2</option>
-                        <option value="supplier-3">supplier -3</option>
+                        <option value="Happlilo">Happlilo</option>
+                        <option value="Lagom">Lagom</option>
+                        <option value="Organicali">Organicali</option>
+                        <option value="Dry Fruit Hub">Dry Fruit Hub</option>
+                        <option value="BerrLes & Nuts">BerrLes & Nuts</option>
                     </select>
                 </div>
                 <textarea className='shadow w-full p-3 mb-2 rounded-lg border border-blue-100 resize-none h-40' {...register("description", { required: true })}></textarea>
