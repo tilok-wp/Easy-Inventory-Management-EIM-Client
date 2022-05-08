@@ -47,12 +47,10 @@ const InventoryItem = () => {
             const url = `https://secure-earth-46160.herokuapp.com/inventory/${_id}`
             await axios.put(url, newProductItem)
                 .then(response => {
-                    console.log(response.data)
                     setProductItem(newProductItem)
                 });
 
             // setProductItem(newProductItem)
-            console.log("Delevered item", id)
         } else {
             toast.error('Product is out of stock now!!!, Try later...')
         }

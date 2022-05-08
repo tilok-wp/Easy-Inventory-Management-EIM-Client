@@ -52,6 +52,9 @@ const Privacy = () => {
                 What third parties we receive data from
                 What automated decision making and/or profiling we do with user data
                 Industry regulatory disclosure requirements
+
+
+
             </p>
             <PageTitleBar title='Privacy'></PageTitleBar>
         </div>

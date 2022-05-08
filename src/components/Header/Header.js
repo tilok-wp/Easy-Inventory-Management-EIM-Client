@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ActiveLink from '../../utility/ActiveLink/ActiveLink';
-import { XIcon, MenuAlt2Icon } from '@heroicons/react/solid'
+import { XIcon, MenuAlt2Icon, UserCircleIcon } from '@heroicons/react/solid'
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';

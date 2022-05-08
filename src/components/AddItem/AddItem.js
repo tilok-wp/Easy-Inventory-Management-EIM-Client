@@ -28,7 +28,7 @@ const AddItem = () => {
             userEmail: userEmail,
             delivered: 0
         }
-        // console.log(newProduct)
+
 
         axios.post('https://secure-earth-46160.herokuapp.com/inventory', newProduct)
             .then(res => {

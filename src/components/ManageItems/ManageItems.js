@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import useProductItems from '../../hooks/useProductItems';
 import PageTitleBar from '../PageTitleBar/PageTitleBar';
 import TableItem from '../TableItem/TableItem';
@@ -38,6 +39,7 @@ const ManageItems = () => {
         <section className='py-20'>
             <h3 className='text-center text-3xl uppercase mb-10'>Manage Inventories : {stockCount}</h3>
             <div className='container mx-auto py-5'>
+                <Link to='/add-item' className=' bg-gray-800 hover:bg-blue-500 px-10 py-3 mt-3 mb-5 text-white rounded-lg inline-block font-bold'> Add new item </Link>
                 <table className='manage-product'>
                     <thead>
                         <tr>
