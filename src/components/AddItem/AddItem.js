@@ -7,9 +7,9 @@ import PageTitleBar from '../PageTitleBar/PageTitleBar';
 const axios = require('axios')
 
 const AddItem = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const [user] = useAuthState(auth)
-    const handleAddItem = (data) => {
+    const handleAddItem = (data, e) => {
         const productName = data.productName
         const price = data.price
         const quantity = data.quantity
@@ -35,6 +35,7 @@ const AddItem = () => {
                 const { data, status } = res
                 if (data.insertedId && status === 200) {
                     toast.success(`New item Added!! ID: ${data.insertedId}`)
+                    e.target.reset()
                 } else {
                     toast.error('Some thing wrong!! Try again')
                 }

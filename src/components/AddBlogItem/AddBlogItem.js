@@ -13,7 +13,7 @@ const AddBlogItem = () => {
 
     const { register, handleSubmit } = useForm();
 
-    const onSubmitBlog = async (data) => {
+    const onSubmitBlog = async (data, e) => {
         const imageUrl = data.imageUrl
         const blogHeading = data.blogHeading
         const blogDescription = data.blogDescription
@@ -24,6 +24,7 @@ const AddBlogItem = () => {
             .then(res => {
                 const { data, status } = res
                 if (data.insertedId && status === 200) {
+                    e.target.reset()
                     toast.success(`New blog item added!! ID: ${data.insertedId}`)
                     navigate('/blogs')
                 } else {

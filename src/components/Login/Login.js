@@ -19,11 +19,11 @@ const Login = () => {
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     const { register, handleSubmit } = useForm();
-    const onSubmitLogin = async (inputData) => {
+    const onSubmitLogin = async (inputData, e) => {
         const email = inputData.email
         const password = inputData.password
         await signInWithEmailAndPassword(email, password)
-
+        e.target.reset()
         const { data } = await axios.post('https://secure-earth-46160.herokuapp.com/generate-token', { email })
         localStorage.setItem('secretToken', data.secretToken)
 

@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useProductDetails from '../../hooks/useProductDetails';
+import PageTitleBar from '../PageTitleBar/PageTitleBar';
 
 
 const InventoryItem = () => {
@@ -16,7 +17,7 @@ const InventoryItem = () => {
     const { _id, price, productName, supplier, description, picture } = rest
 
     // console.log(productItem)
-    const onSubmitReStock = async (data) => {
+    const onSubmitReStock = async (data, e) => {
         // const stockQuantity = quantity
         const newQuantiry = parseInt(data.quantity) + parseInt(quantity)
         // const { quantity, ...rest } = productItem
@@ -29,6 +30,7 @@ const InventoryItem = () => {
             .then(response => {
                 console.log(response.data)
                 setProductItem(newProductItem)
+                e.target.reset()
             });
         // console.log("Quantity updated by:", newQuantiry + stockQuantity)
 
@@ -65,7 +67,7 @@ const InventoryItem = () => {
                 <div className='p-5 grow-0'>
                     <h3 className='text-2xl mb-3'>{productName}</h3>
                     <span >Supplier: <strong>{supplier}</strong></span>
-                    <div className='mt-3'><span>Price: <strong>{price}</strong></span> <span className='ml-5'>Stock Quantity: <strong>{quantity}</strong></span> {delivered ? <><span>Delivered: {delivered} </span></> : ''} </div>
+                    <div className='mt-3'><span>Price: <strong>{price}</strong></span> <span className='ml-5 mr-5'>Stock Quantity: <strong>{quantity}</strong></span> {delivered ? <><span>Delivered: <strong>{delivered}</strong> </span></> : ''} </div>
                     <button onClick={() => handleDeliveredItem(_id)} className='mt-5 bg-color-primary hover:bg-gray-800 font-semibold px-8 py-3 text-white  rounded'>Delivered</button>
 
                     <h3 className='mt-5 mb-3 text-xl'>Restock Item</h3>
@@ -78,6 +80,7 @@ const InventoryItem = () => {
                 </div>
             </div>
             <p>{description}</p>
+            <PageTitleBar title='Update stock'></PageTitleBar>
         </section>
     );
 };

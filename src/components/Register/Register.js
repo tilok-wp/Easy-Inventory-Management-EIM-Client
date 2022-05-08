@@ -16,7 +16,7 @@ const Register = () => {
 
 
     const { register, handleSubmit } = useForm();
-    const onSubmitRegister = async (data) => {
+    const onSubmitRegister = async (data, e) => {
         const email = data.email
         const password = data.password
         const displayName = data.displayName
@@ -24,7 +24,7 @@ const Register = () => {
         createUserWithEmailAndPassword(email, password)
         await createUserWithEmailAndPassword(email, password)
         await updateProfile({ displayName })
-        // navigate(from, { replace: true })
+        e.target.reset()
     }
     if (user) {
         navigate(from, { replace: true })
