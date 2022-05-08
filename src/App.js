@@ -16,6 +16,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import AddBlogItem from './components/AddBlogItem/AddBlogItem';
 import RequireAuth from './utility/RequireAuth/RequireAuth';
 import About from './components/About/About';
+import Privacy from './components/Privacy/Privacy';
+import TermsCondition from './components/TermsCondition/TermsCondition';
 
 function App() {
   return (
@@ -43,6 +45,8 @@ function App() {
         }></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/privacy' element={<Privacy></Privacy>}></Route>
+        <Route path='/terms-condition' element={<TermsCondition></TermsCondition>}></Route>
         <Route path='*' element={<NotfoundPage></NotfoundPage>}></Route>
       </Routes>
       <Footer></Footer>

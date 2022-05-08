@@ -8,7 +8,7 @@ const Product = ({ productDetails, handleManageProduct }) => {
                 <img className='h-48 mx-auto' src={picture} alt="" />
 
             </div>
-            <div>
+            <div className='px-3'>
                 <h3 className='text-xl mt-5 mb-3'>{productName}</h3>
                 <div className='flex justify-between my-5'>
                     <span className='block mb-1'> Quantity: {<strong>{quantity}</strong>}  </span>
