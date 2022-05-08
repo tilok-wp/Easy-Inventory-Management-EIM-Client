@@ -7,15 +7,15 @@ import { Link } from 'react-router-dom';
 const Blogs = () => {
     const [blogs, setBlogs] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/blogs')
+        fetch('https://secure-earth-46160.herokuapp.com/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, [])
     return (
         <div className='py-20'>
-            <h3 className='text-center text-3xl uppercase mb-5'>Blogs</h3>
+            <h3 className='text-center text-3xl uppercase mb-10'>Blogs</h3>
 
-            <div className='blog-container container md:mx-auto mx-3 grid md:grid-cols-2 gap-8'>
+            <div className='blog-container container md:mx-auto mx-3 grid md:grid-cols-2 gap-8 w'>
                 {
                     blogs.map(item => <Blog
                         key={item._id}

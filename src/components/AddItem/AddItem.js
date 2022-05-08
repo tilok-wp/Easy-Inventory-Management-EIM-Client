@@ -20,15 +20,17 @@ const AddItem = () => {
 
         const newProduct = {
             productName: productName,
+            price: price,
             quantity: quantity,
             description: description,
             supplier: supplier,
             picture: picture,
-            userEmail: userEmail
+            userEmail: userEmail,
+            delivered: 0
         }
         // console.log(newProduct)
 
-        axios.post('http://localhost:5000/inventory', newProduct)
+        axios.post('https://secure-earth-46160.herokuapp.com/inventory', newProduct)
             .then(res => {
                 const { data, status } = res
                 if (data.insertedId && status === 200) {
@@ -42,7 +44,7 @@ const AddItem = () => {
     return (
         <div className='py-20 container md:mx-auto px-3 md:px-0'>
             <h3 className='text-center text-3xl mb-5'>Add Stock Item</h3>
-            <form onSubmit={handleSubmit(handleAddItem)} className='mw-1/2 mx-auto'>
+            <form onSubmit={handleSubmit(handleAddItem)} className='md:w-1/2 mx-auto'>
                 <input className='shadow w-full p-3 mb-2 rounded-lg border border-blue-100' placeholder='Product name' type="text" {...register("productName", { required: true })} />
                 <div className='grid gap-2 md:grid-cols-3'>
                     <input className='shadow p-3 mb-2 rounded-lg border border-blue-100' placeholder='Price' type="number" {...register("price", { min: 0, required: true })} />
@@ -54,7 +56,7 @@ const AddItem = () => {
                         <option value="supplier-3">supplier -3</option>
                     </select>
                 </div>
-                <textarea className='shadow w-full p-3 mb-2 rounded-lg border border-blue-100 resize-none' {...register("description", { required: true })}></textarea>
+                <textarea className='shadow w-full p-3 mb-2 rounded-lg border border-blue-100 resize-none h-40' {...register("description", { required: true })}></textarea>
                 <input className='shadow w-full p-3 mb-2 rounded-lg border border-blue-100' placeholder='Product image url' type="url" {...register("picture", { required: true })} />
                 <input type="submit" value="Submit" className='cursor-pointer bg-color-primary hover:bg-gray-800 font-semibold px-12 py-3 mt-3 mx-auto text-white  rounded block' />
 

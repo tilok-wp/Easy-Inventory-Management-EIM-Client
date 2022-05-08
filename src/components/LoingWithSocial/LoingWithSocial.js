@@ -5,19 +5,28 @@ import auth from '../../firebase.init';
 import { useSignInWithGoogle, useSignInWithFacebook } from 'react-firebase-hooks/auth'
 import Loader from '../Loader/Loader';
 import { useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const LoingWithSocial = () => {
     const navigate = useNavigate()
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
+
     const [signInWithGoogle, userGoogle, loadingGoogle] = useSignInWithGoogle(auth);
     const [signInWithFacebook, userFacebook, loadingFacebook] = useSignInWithFacebook(auth);
 
+    const getTokenUse = async (email) => {
+        const { data } = await axios.post('https://secure-earth-46160.herokuapp.com/generate-token', { email })
+        localStorage.setItem('secretToken', data.secretToken)
+    }
+
     useEffect(() => {
         if (userGoogle || userFacebook) {
+            const email = userGoogle.user.email
+            getTokenUse(email)
             navigate(from, { replace: true });
         }
-    }, [userGoogle || userFacebook])
+    }, [userGoogle, userFacebook, from, navigate])
 
     if (loadingGoogle || loadingFacebook) {
         return <Loader></Loader>

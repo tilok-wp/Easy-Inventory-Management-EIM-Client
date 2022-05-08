@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useRef } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
@@ -18,10 +19,14 @@ const Login = () => {
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     const { register, handleSubmit } = useForm();
-    const onSubmitLogin = async (data) => {
-        const email = data.email
-        const password = data.password
+    const onSubmitLogin = async (inputData) => {
+        const email = inputData.email
+        const password = inputData.password
         await signInWithEmailAndPassword(email, password)
+
+        const { data } = await axios.post('https://secure-earth-46160.herokuapp.com/generate-token', { email })
+        localStorage.setItem('secretToken', data.secretToken)
+
     };
 
     useEffect(() => {
@@ -29,7 +34,7 @@ const Login = () => {
             navigate(from, { replace: true });
         }
 
-    }, [user])
+    }, [user, navigate, from])
     const passResetHandaller = async () => {
         const email = refResetEmail.current.value
         if (email) {
@@ -45,7 +50,7 @@ const Login = () => {
     let errorMessage = ''
     if (error) {
         const passwordErr = error?.message.includes('wrong-password')
-        console.log(passwordErr)
+        // console.log(passwordErr)
         if (passwordErr) {
             errorMessage = 'Email and Password not matched. Please try with Write info'
         } else {

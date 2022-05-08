@@ -6,9 +6,11 @@ const Footer = () => {
         <footer className='bg-gray-200 py-5'>
             <div className='container md:mx-auto md:flex md:justify-between text-center'>
                 <div>
-                    <a href="#" target="_blank" >Facebook</a>
-                    <a className='mx-5' href="#" target="_blank" >Youtube</a>
-                    <a href="#" target="_blank" >Twitter</a>
+
+                    <a href="https://www.facebook.com/TilokPaul" target="_blank" rel="noopener noreferrer" >Facebook</a>
+                    <a className='mx-5' href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" >Youtube</a>
+                    <a href="https://twitter.com/tilokpaul" target="_blank" rel="noopener noreferrer" >Twitter</a>
+
                 </div>
                 <div className='md:order-3'>
                     <Link className='mr-3' to='/privacy'> privacy</Link>

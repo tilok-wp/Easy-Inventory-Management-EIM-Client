@@ -20,12 +20,12 @@ const AddBlogItem = () => {
         const authorEmail = user?.email
         // console.log(data)
         const blog = { imageUrl, blogHeading, blogDescription, authorEmail }
-        axios.post('http://localhost:5000/blogs', blog)
+        axios.post('https://secure-earth-46160.herokuapp.com/blogs', blog)
             .then(res => {
                 const { data, status } = res
                 if (data.insertedId && status === 200) {
                     toast.success(`New blog item added!! ID: ${data.insertedId}`)
-                    // navigate('/blogs')
+                    navigate('/blogs')
                 } else {
                     toast.error('Some thing wrong!! Try again')
                 }

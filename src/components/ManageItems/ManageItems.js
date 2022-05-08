@@ -10,8 +10,8 @@ const ManageItems = () => {
     const handleDeleteStockItem = _id => {
         const conform = window.confirm('Are you want to delete this Product')
         if (conform) {
-            console.log('Product deleted', _id)
-            const url = `http://localhost:5000/inventory/${_id}`
+            // console.log('Product deleted', _id)
+            const url = `https://secure-earth-46160.herokuapp.com/inventory/${_id}`
             console.log(url)
             fetch(url, {
                 method: 'DELETE'
@@ -28,7 +28,7 @@ const ManageItems = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/inventorytotal')
+        fetch('https://secure-earth-46160.herokuapp.com/inventorytotal')
             .then(res => res.json())
             .then(data => setStockCount(data.inventoryItemsCount))
     }, [productItems])
@@ -62,6 +62,9 @@ const ManageItems = () => {
                             ></TableItem>)}
                     </tbody>
                 </table>
+                <div>
+
+                </div>
             </div>
             <PageTitleBar title='Manage Items'></PageTitleBar>
         </section>

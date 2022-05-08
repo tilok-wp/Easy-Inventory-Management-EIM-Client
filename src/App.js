@@ -15,6 +15,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AddBlogItem from './components/AddBlogItem/AddBlogItem';
 import RequireAuth from './utility/RequireAuth/RequireAuth';
+import About from './components/About/About';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/about' element={<About></About>}></Route>
         <Route path='/manage-items' element={
           <RequireAuth><ManageItems></ManageItems></RequireAuth>
         }></Route>

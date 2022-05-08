@@ -3,7 +3,7 @@ import { TrashIcon, PencilAltIcon } from '@heroicons/react/solid'
 import { useNavigate } from 'react-router-dom';
 
 const TableItem = ({ item, handleDeleteStockItem }) => {
-    const { _id, productName, supplier, price, quantity, description, picture } = item
+    const { _id, productName, supplier, price, quantity, description, picture, delivered } = item
 
     const navigate = useNavigate()
     const handleManageProduct = id => {
@@ -15,7 +15,7 @@ const TableItem = ({ item, handleDeleteStockItem }) => {
             <td>{productName}</td>
             <td>{price}</td>
             <td>{quantity}</td>
-            <td>0</td>
+            <td>{delivered > 0 ? <><span>Sold: </span> {delivered}</> : <><span>New</span></>}</td>
             <td>{supplier}</td>
             <td>{description.length > 20 ? description.slice(0, 20) + " ..." : description}</td>
             <td><button onClick={() => handleDeleteStockItem(_id)} className='p-1'><TrashIcon className='h-7 w-7 text-red-700' /></button></td>

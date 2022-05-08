@@ -4,7 +4,7 @@ const useProductDetails = product_id => {
     const [productItem, setProductItem] = useState([])
 
     useEffect(() => {
-        const url = `http://localhost:5000/inventory/${product_id}`
+        const url = `https://secure-earth-46160.herokuapp.com/inventory/${product_id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProductItem(data))

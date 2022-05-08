@@ -1,5 +1,5 @@
 import React from 'react';
-import { FolderAddIcon, ViewBoardsIcon, PuzzleIcon, DocumentAddIcon, TrashIcon, RefreshIcon, TruckIcon, AdjustmentsIcon } from '@heroicons/react/solid'
+import { DocumentAddIcon, TrashIcon, RefreshIcon, TruckIcon, AdjustmentsIcon } from '@heroicons/react/solid'
 
 const Features = () => {
     return (

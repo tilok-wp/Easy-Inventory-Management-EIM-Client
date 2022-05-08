@@ -30,6 +30,7 @@ const RequireAuth = ({ children }) => {
             </div>
         </>
     }
+
     return children
 };
 
